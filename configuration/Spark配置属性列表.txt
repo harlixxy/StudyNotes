@@ -82,18 +82,29 @@
 
 
 
+************************************************************************************************************************************************************
+**** 源码阅读
+************************************************************************************************************************************************************
+**** SparkContext
+"spark.driver.allowMultipleContexts", false				// If true, log warnings instead of throwing exceptions when multiple SparkContexts are active
+"spark.master" 																		// "A master URL must be set in your configuration"
+"spark.app.name" 																	// "An application name must be set in your configuration"
+"spark.logConf" 																	// Log Spark configuration
+"spark.driver.host", Utils.localHostName()
+"spark.driver.port", "0"
+"spark.jars"
+"spark.files"
+"spark.eventLog.enabled", false
+"spark.eventLog.dir", EventLoggingListener.DEFAULT_LOG_DIR = "/tmp/spark-events"
 
 
 
-
-
-
-
-
-
-
-
-
+内部设置：在代码中set，没有get
+"spark.tachyonStore.folderName",  randomUUID   	// Generate the random name for a temp folder in Tachyon
+  		 																					// Add a timestamp as the suffix here to make it more safe
+      																					
+"SPARK_YARN_MODE"
+"spark.executor.id", "driver"
 
 
 

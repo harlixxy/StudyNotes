@@ -14,7 +14,7 @@ scala> wordsort.take(10)
 
 * bin/spark-shell --master spark://master:7077 --executor-memory 3g
 * bin/spark-shell --master yarn-client --executor-memory 3g --num-executors 3
-
+* bin/spark-shell --master yarn-client --driver-memory 512m --executor-memory 512m
 ************************************************************************************************************************************************************
 *** bin/spark-submit
 * bin/spark-submit --master spark://master:7077 --class org.apache.spark.examples.SparkPi --executor-memory 2g lib/spark-examples-1.0.0-hadoop2.2.0.jar 1000
