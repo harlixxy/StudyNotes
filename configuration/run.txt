@@ -18,6 +18,9 @@ scala> wordsort.take(10)
 ./bin/spark-submit --master spark://192.168.70.214:7077 --class org.apache.spark.examples.SparkPi --deploy-mode cluster --executor-memory 3g --total-executor-cores 3 ./lib/spark-examples-1.1.0-hadoop2.2.0.jar 1000
 
 
+./bin/spark-submit --master spark://192.168.70.214:7077 --class org.apache.spark.examples.WordCount --deploy-mode cluster --executor-memory 3g --total-executor-cores 3 ./lib/spark-examples-1.1.0-hadoop2.2.0.jar hdfs://wison214:9000/data/wordcount/core-site.xml hdfs://wison214:9000/output/wordcount22
+
+
 * bin/spark-shell --master yarn-client --executor-memory 3g --num-executors 3
 * bin/spark-shell --master yarn-client --driver-memory 512m --executor-memory 512m
 ************************************************************************************************************************************************************
