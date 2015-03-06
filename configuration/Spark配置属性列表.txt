@@ -108,15 +108,31 @@
 
 
 
+**** Broadcast : Manager、Factory
+** spark.broadcast.compress	true	Whether to compress broadcast variables before sending them. Generally a good idea.
+** spark.broadcast.factory	org.apache.spark.broadcast.TorrentBroadcastFactory	Which broadcast implementation to use.
+** spark.broadcast.blockSize	4096	Size of each piece of a block in kilobytes for TorrentBroadcastFactory. Too large a value decreases parallelism during broadcast (makes it slower); however, if it is too small, BlockManager might take a performance hit.
+** spark.broadcast.port	(random)	Port for the driver's HTTP broadcast server to listen on. This is not relevant for torrent broadcast.
+
+**** HttpBroadcast
+** "spark.buffer.size", 65536 
+** "spark.broadcast.compress", true
+** "spark.httpBroadcast.uri",  serverUri —— 内部设置：构建 HttpServer 时
 
 
 
-
-
-
-
-
-
+**** BlockManager
+**** MemoryStore
+** spark.storage.unrollFraction	0.2	Fraction of spark.storage.memoryFraction to use for unrolling blocks in memory. This is dynamically allocated by dropping existing blocks when there is not enough free storage space to unroll the new block in its entirety.
+** "spark.storage.unrollMemoryThreshold", 1024 * 1024  Initial memory to request before unrolling any block
+** 
+** 
+** 
+** 
+** 
+** 
+** 
+** 
 
 
 
