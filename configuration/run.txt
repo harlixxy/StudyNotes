@@ -1,4 +1,5 @@
 
+http://wh002:8088/cluster
 
 ************************************************************************************************************************************************************
 **** 运行示例
@@ -30,6 +31,19 @@ scala> wordsort.take(10)
 bin/spark-submit --master spark://master:7077 --class org.apache.spark.examples.SparkPi --executor-memory 2g --total-executor-cores 2 lib/spark-examples-1.0.0-hadoop2.2.0.jar 1000
 
 * ./bin/spark-submit --master yarn-cluster --class week2.SogouQA --executor-memory 3g week2.jar hdfs://master:8000/dataguru/data/SogouQ1.txt  hdfs://master:8000/dataguru/week2/output3
+
+
+
+spark-submit --master local[4] --driver-memory 2G  --executor-memory 4G --class com.fly.spark.FP_Growth SparkDemo.jar file:///home/xuxiangyu/code/help/top100 file:///home/xuxiangyu/code/help/top100_out3
+spark-submit --master yarn-cluster --driver-memory 2G --num-executors 4 --executor-memory 4G --class com.fly.spark.FP_Growth SparkDemo.jar file:///home/xuxiangyu/code/help/top100 file:///home/xuxiangyu/code/help/top100_out3
+
+spark-submit --master yarn-cluster --driver-memory 2G --num-executors 4 --executor-memory 2G --class com.fly.spark.FP_Growth ./help/SparkDemo.jar hdfs://wison214:9000/user/harli/top100 hdfs://wison214:9000/user/harli/top100_out1
+
+
+
+spark-submit --master yarn-cluster --driver-memory 2G --num-executors 4 --executor-memory 2G --class com.fly.spark.FP_Growth SparkDemo.jar hdfs://wh001:8020/user/xuxiangyu/top100 hdfs://wh001:8020/user/xuxiangyu/top100_out
+
+
 ************************************************************************************************************************************************************
 **** 常用场景或操作示例 —— 借鉴炼数成金：...\炼数成金 马军辉的spark视频资料\02Spark编程模型\sample
 ************************************************************************************************************************************************************
