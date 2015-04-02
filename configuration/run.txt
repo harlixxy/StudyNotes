@@ -1,6 +1,9 @@
 
 http://wh002:8088/cluster
 
+
+
+
 ************************************************************************************************************************************************************
 **** ÔËÐÐÊ¾Àý
 ************************************************************************************************************************************************************
@@ -35,13 +38,15 @@ bin/spark-submit --master spark://master:7077 --class org.apache.spark.examples.
 
 
 spark-submit --master local[4] --driver-memory 2G  --executor-memory 4G --class com.fly.spark.FP_Growth SparkDemo.jar file:///home/xuxiangyu/code/help/top100 file:///home/xuxiangyu/code/help/top100_out3
-spark-submit --master yarn-cluster --driver-memory 2G --num-executors 4 --executor-memory 4G --class com.fly.spark.FP_Growth SparkDemo.jar file:///home/xuxiangyu/code/help/top100 file:///home/xuxiangyu/code/help/top100_out3
+spark-submit --master yarn-cluster  --conf spark.storage.blockManagerSlaveTimeoutMs=100000 --driver-memory 2G --num-executors 4 --executor-memory 4G --class com.fly.spark.FP_Growth SparkDemo.jar file:///home/xuxiangyu/code/help/top100 file:///home/xuxiangyu/code/help/top100_out3
 
 spark-submit --master yarn-cluster --driver-memory 2G --num-executors 4 --executor-memory 2G --class com.fly.spark.FP_Growth ./help/SparkDemo.jar hdfs://wison214:9000/user/harli/top100 hdfs://wison214:9000/user/harli/top100_out1
 
 
 
-spark-submit --master yarn-cluster --driver-memory 2G --num-executors 4 --executor-memory 2G --class com.fly.spark.FP_Growth SparkDemo.jar hdfs://wh001:8020/user/xuxiangyu/top100 hdfs://wh001:8020/user/xuxiangyu/top100_out
+spark-submit --master yarn-cluster --conf spark.storage.blockManagerSlaveTimeoutMs=100000 --driver-memory 2G --num-executors 4 --executor-memory 2G --class com.fly.spark.FP_Growth SparkDemo.jar hdfs://wh001:8020/user/xuxiangyu/top100 hdfs://wh001:8020/user/xuxiangyu/top100_out
+
+spark-submit --master yarn-client --conf spark.storage.blockManagerSlaveTimeoutMs=100000 --driver-memory 2G --num-executors 4 --executor-memory 2G --class com.fly.spark.FP_Growth SparkDemo.jar hdfs://wh001:8020/user/xuxiangyu/top100 hdfs://wh001:8020/user/xuxiangyu/top100_out
 
 
 ************************************************************************************************************************************************************
